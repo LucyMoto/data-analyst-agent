@@ -203,7 +203,7 @@ def make_data_analyst_agent(model, checkpointer: Optional[object] = None):
     workflow.add_node("run_eda", run_eda_node)
     
     # Set entry point
-    workflow.set_entry_point("create_pii_node")
+    workflow.set_entry_point("pii_check")
     
     workflow.add_conditional_edges(
         "pii_check",
@@ -212,7 +212,8 @@ def make_data_analyst_agent(model, checkpointer: Optional[object] = None):
             "clean_data": "clean_data",
             "end": END,
         },
-    
+    )
+
     workflow.add_conditional_edges(
         "clean_data",
         route_after_cleaning,
@@ -220,7 +221,8 @@ def make_data_analyst_agent(model, checkpointer: Optional[object] = None):
             "run_eda": "run_eda",
             "end": END,
         },
-    
+    )
+
     workflow.add_edge("run_eda", END)
     
     return workflow.compile(
