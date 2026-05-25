@@ -2,7 +2,7 @@
 name = "data-analyst-agent"
 version = "0.1.0"
 description = "Minimal LangGraph orchestration for DataAnalystAgent: data_cleaning_agent then EDAWorkflow"
-authors = ["Andres Vourakis"]
+authors = ["Andres Vourakis, Lucy Michaels"]
 readme = "README.md"
 packages = [{ include = "data_analyst_agent" }]
 
