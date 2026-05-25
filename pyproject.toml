@@ -13,8 +13,8 @@ langgraph = "~0.2.0"
 langchain = "~0.3.0"
 langchain-openai = "~0.2.0"
 python-dotenv = "^1.0.0"
-data-cleaning-agent = { path = "../data-cleaning-agent", develop = true }
-eda-workflow = { path = "../eda-workflow", develop = true }
+data-cleaning-agent = { path = "../module-3-data-cleaning-agent", develop = true }
+eda-workflow = { path = "../module-4-EDA-workflow", develop = true }
 
 [build-system]
 requires = ["poetry-core"]
